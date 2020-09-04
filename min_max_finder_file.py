@@ -1,4 +1,4 @@
-print("This is a minimal number finder")
+print("This is a min and max number finder")
 print()
 print("To use this application write a list of numbers as shown below")
 print()
