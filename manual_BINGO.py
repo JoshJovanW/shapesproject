@@ -54,30 +54,32 @@ def Bingo():
     print("BINGO!")
 
 
-if Top_Right_From_Top() == True:
+if Top_Right_From_Top():
     Bingo()
 
-elif Diagonal_To_Bottom_Right() == True:
+elif Diagonal_To_Bottom_Right():
     Bingo()
 
-elif Bottom_Left_From_Top() == True:
+elif Bottom_Left_From_Top():
     Bingo()
 
-elif Bottom_Middle_From_Mid_Top() == True:
+elif Bottom_Middle_From_Mid_Top():
     Bingo()
 
-elif Bottom_Right_From_Top_Right() == True:
+elif Bottom_Right_From_Top_Right():
     Bingo()
 
-elif Middle_Left_From_Right() == True:
+elif Middle_Left_From_Right():
     Bingo()
 
-elif Bottom_Left_To_Bottom_Right() == True:
+elif Bottom_Left_To_Bottom_Right():
     Bingo()
 
-elif Bottom_Left_From_Top() == True:
+elif Bottom_Left_From_Top():
     Bingo()
 
 else: 
     Last_Resort()
 
+
+   
