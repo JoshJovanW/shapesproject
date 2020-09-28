@@ -95,84 +95,90 @@ def how_to_play():
 
     
     
-    
+def player_A():
+    print("Player A's turn. Enter your location. ")
+
+def player_B():
+    print("Player B's turn. Enter your location. ")
 
 def main_A():  
-   print("start with player A. Enter your location.")
-
-    if input() == "top_left":
-        top_left() 
+   if input() == "top_left":
+        top_Left_A() 
 
     elif input() == "top_middle":
-        top_middle()
+        top_Middle_A()
 
     elif input() == "top_right":
-        top_right()
+        top_Right_A()
     
     elif input() == "middle_left":
-        middle_left()
+        middle_Left_A()
     
     elif input() == "middle_middle":
-        middle_middle()
+        middle_Middle_A()
     
     elif input() == "middle_right":
-        middle_right() 
+        middle_Right_A() 
     
     elif input() == "bottom_left":
-        bottom_left() 
+        bottom_Left_A() 
 
     elif input() == "bottom_middle":
-        bottom_middle() 
+        bottom_Middle_A() 
   
     elif input() == "bottom_right":
-        bottom_right() 
+        bottom_Right_A() 
     
     else: 
-        not_valid()
+        not_Valid_A()
     
-    print(a)
+    
 
 def main_B():  
-   print("Player B's turn. Enter your location.")
-
     if input() == "top_left":
-        top_left() 
+        top_Left_B() 
 
     elif input() == "top_middle":
-        top_middle()
+        top_Middle_B()
 
     elif input() == "top_right":
-        top_right()
+        top_Right_B()
     
     elif input() == "middle_left":
-        middle_left()
+        middle_Left_B()
     
     elif input() == "middle_middle":
-        middle_middle()
+        middle_Middle_B()
     
     elif input() == "middle_right":
-        middle_right() 
+        middle_Right_B() 
     
     elif input() == "bottom_left":
-        bottom_left() 
+        bottom_Left_B() 
 
     elif input() == "bottom_middle":
-        bottom_middle() 
+        bottom_Middle_B() 
   
     elif input() == "bottom_right":
-        bottom_right() 
+        bottom_Right_B() 
     
     else: 
-        not_valid()
+        not_Valid_B()
+
+
+
     
-    print(a)
+  
 
 
 
-print("This application is a console version of the BINGO! game. type yes to continue")
+print("This application is a console version of the BINGO! game.")
 
-if input() == "yes":
+"this is a sentence.\n"
+
+if input("Type yes to continue.") == "yes":
     how_to_play()
-    main()
 else:
-    print("Have a Good Day")
+    print("Have a Good day")
+    
+    
