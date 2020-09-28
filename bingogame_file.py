@@ -1,93 +1,130 @@
 a = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-def top_left():
-    a[0][0] = sym
+# player a 
+def top_Left_A():
+    a[0][0] = "x"
 
-def top_middle():
-    a[0][1] = sym
+def top_Middle_A():
+    a[0][1] = "x"
 
-def top_right():
-    a[0][2] = sym
+def top_Right_A():
+    a[0][2] = "x"
 
-def middle_left():
-    a[1][0] = sym
+def middle_Left_A():
+    a[1][0] = "x"
 
-def middle_middle():
-    a[1][1] = sym
+def middle_Middle_A():
+    a[1][1] = "x"
 
-def middle_right():
-    a[1][2] = sym
+def middle_Right_A():
+    a[1][2] = "x"
 
-def bottom_left():
-    a[2][0] = sym
+def bottom_Left_A():
+    a[2][0] = "x"
 
-def bottom_middle():
-    a[2][1] = sym
+def bottom_Middle_A():
+    a[2][1] = "x"
 
-def bottom_right():
-    a[2][2] = sym
+def bottom_Right_A():
+    a[2][2] = "x"
 
-def not_valid():
+def not_Valid_A():
     print("sorry this location is not valid")
+
+#player b 
+
+def top_Left_B():
+    a[0][0] = "O"
+
+def top_Middle_B():
+    a[0][1] = "O"
+
+def top_Right_B():
+    a[0][2] = "O"
+
+def middle_Left_B():
+    a[1][0] = "O"
+
+def middle_Middle_B():
+    a[1][1] = "O"
+
+def middle_Right_B():
+    a[1][2] = "O"
+
+def bottom_Left_B():
+    a[2][0] = "O"
+
+def bottom_Middle_B():
+    a[2][1] = "O"
+
+def bottom_Right_B():
+    a[2][2] = "O"
+
+def not_Valid_B():
+    print("sorry this location is not valid")
+
+
+
 
 def how_to_play():
     
-    print()
+    "This is a sentence.\n"
     
     print("to play this game you need two players.")
     
-    print()
+    "This is a sentence.\n"
     
     print("write in X and O form (DO NOT WRITE IN ANY OTHER FORM OR THIS APP WILL NOT WORK)" )
     
-    print()
+    "This is a sentence.\n"
     
     print("Player 1 = X")
     
-    print()
+    "This is a sentence.\n"
     
     print("Player 2 = O")
     
-    print()
+    "This is a sentence.\n"
     
     print("to input your X or your O write the specific location on the 3x3 array")
     
-    print()
+    "This is a sentence.\n"
     
     print("for example: middle_left or top_right. Don't forget to use the underscores")
     
-    print()
-    
-    print("to input your symbol and location use this format. symbol, location for example: X top_right")
-    
-    print()
-    sym, loc = input("enter your symbol and location like the format above: ").split()
+    "This is a sentence.\n"
 
-def main():  
-    if loc == "top_left":
+    
+    
+    
+
+def main_A():  
+   print("start with player A. Enter your location.")
+
+    if input() == "top_left":
         top_left() 
 
-    elif loc == "top_middle":
+    elif input() == "top_middle":
         top_middle()
 
-    elif loc == "top_right":
+    elif input() == "top_right":
         top_right()
     
-    elif loc == "middle_left":
+    elif input() == "middle_left":
         middle_left()
     
-    elif loc == "middle_middle":
+    elif input() == "middle_middle":
         middle_middle()
     
-    elif loc == "middle_right":
+    elif input() == "middle_right":
         middle_right() 
     
-    elif loc == "bottom_left":
+    elif input() == "bottom_left":
         bottom_left() 
 
-    elif loc == "bottom_middle":
+    elif input() == "bottom_middle":
         bottom_middle() 
   
-    elif loc == "bottom_right":
+    elif input() == "bottom_right":
         bottom_right() 
     
     else: 
@@ -95,40 +132,41 @@ def main():
     
     print(a)
 
-def top_left():
-    a[0][0] = sym
+def main_B():  
+   print("Player B's turn. Enter your location.")
 
-def top_middle():
-    a[0][1] = sym
+    if input() == "top_left":
+        top_left() 
 
-def top_right():
-    a[0][2] = sym
+    elif input() == "top_middle":
+        top_middle()
 
-def middle_left():
-    a[1][0] = sym
-
-def middle_middle():
-    a[1][1] = sym
-
-def middle_right():
-    a[1][2] = sym
-
-def bottom_left():
-    a[2][0] = sym
-
-def bottom_middle():
-    a[2][1] = sym
-
-def bottom_right():
-    a[2][2] = sym
-
-def not_valid():
-    print("sorry this location is not valid")
-
-
-
-
+    elif input() == "top_right":
+        top_right()
     
+    elif input() == "middle_left":
+        middle_left()
+    
+    elif input() == "middle_middle":
+        middle_middle()
+    
+    elif input() == "middle_right":
+        middle_right() 
+    
+    elif input() == "bottom_left":
+        bottom_left() 
+
+    elif input() == "bottom_middle":
+        bottom_middle() 
+  
+    elif input() == "bottom_right":
+        bottom_right() 
+    
+    else: 
+        not_valid()
+    
+    print(a)
+
 
 
 print("This application is a console version of the BINGO! game. type yes to continue")
