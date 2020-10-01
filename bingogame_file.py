@@ -1,169 +1,231 @@
-a = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+a = [[" "," "," "], [" "," "," "], [" "," "," "]]
+
 # player a 
-def top_Left_A():
-    a[0][0] = "x"
+def top_Left(shape):
+    if a[0][0] == " ":
+        a[0][0] = shape
+        loc = "found"
+    
+    
+def top_Middle(shape):
+    if a[0][1] == " ":
+        a[0][1] = shape
+        loc = "found"
+    
+def top_Right(shape):
+    if a[0][2] == " ":
+        a[0][2] = shape
+        loc = "found"
+   
+def middle_Left(shape):
+    if a[1][0] == " ":
+        a[1][0] = shape
+        loc = "found"
+    
+def middle_Middle(shape):
+    if a[1][1] == " ":
+        a[1][1] = shape
+        loc = "found"
 
-def top_Middle_A():
-    a[0][1] = "x"
+def middle_Right(shape):
+    if a[1][2] == " ":
+        a[1][2] = shape
+        loc = "found"
 
-def top_Right_A():
-    a[0][2] = "x"
+def bottom_Left(shape):
+    if a[2][0] == " ":
+        a[2][0] = shape
+        loc = "found"
 
-def middle_Left_A():
-    a[1][0] = "x"
+def bottom_Middle(shape):
+    if a[2][1] == " ":
+        a[2][1] = shape
+        loc = "found"
 
-def middle_Middle_A():
-    a[1][1] = "x"
+def bottom_Right(shape):
+    if a[2][2] == " ":
+        a[2][2] = shape
+        loc = "found"
 
-def middle_Right_A():
-    a[1][2] = "x"
-
-def bottom_Left_A():
-    a[2][0] = "x"
-
-def bottom_Middle_A():
-    a[2][1] = "x"
-
-def bottom_Right_A():
-    a[2][2] = "x"
-
-def not_Valid_A():
-    print("sorry this location is not valid")
-
-#player b 
-
-def top_Left_B():
-    a[0][0] = "O"
-
-def top_Middle_B():
-    a[0][1] = "O"
-
-def top_Right_B():
-    a[0][2] = "O"
-
-def middle_Left_B():
-    a[1][0] = "O"
-
-def middle_Middle_B():
-    a[1][1] = "O"
-
-def middle_Right_B():
-    a[1][2] = "O"
-
-def bottom_Left_B():
-    a[2][0] = "O"
-
-def bottom_Middle_B():
-    a[2][1] = "O"
-
-def bottom_Right_B():
-    a[2][2] = "O"
-
-def not_Valid_B():
+def not_Valid():
     print("sorry this location is not valid")
 
 
 
 
 def how_to_play():
+    print("to play this game you need two players.\n")
     
-    "This is a sentence.\n"
+    print("Player 1 = X \n")
     
-    print("to play this game you need two players.")
+    print("Player 2 = O \n")
     
-    "This is a sentence.\n"
+    print("to input your X or your 0 write the specific location on the 3x3 array \n")
     
-    print("write in X and O form (DO NOT WRITE IN ANY OTHER FORM OR THIS APP WILL NOT WORK)" )
+    print("for example: middle_left or top_right. Don't forget to use the underscores \n")
     
-    "This is a sentence.\n"
-    
-    print("Player 1 = X")
-    
-    "This is a sentence.\n"
-    
-    print("Player 2 = O")
-    
-    "This is a sentence.\n"
-    
-    print("to input your X or your O write the specific location on the 3x3 array")
-    
-    "This is a sentence.\n"
-    
-    print("for example: middle_left or top_right. Don't forget to use the underscores")
-    
-    "This is a sentence.\n"
 
-    
-    
 def player_A():
-    print("Player A's turn. Enter your location. ")
+    print("Player a's Turn.\n")
+
+def shape_A():
+    shape = "x"
+
+def shape_Bingo_A():
+    shape_bingo = "x"
+
+def shape_B():
+    shape = "O"
+
+def shape_Bingo_B():
+    shape_bingo = "O"
 
 def player_B():
-    print("Player B's turn. Enter your location. ")
+    print("Player b's Turn.\n")
 
-def main_A():  
-   if input() == "top_left":
-        top_Left_A() 
+def ask_For_Input():
+    print("please input your location. write in this form ('top left')")
 
-    elif input() == "top_middle":
-        top_Middle_A()
 
-    elif input() == "top_right":
-        top_Right_A()
-    
-    elif input() == "middle_left":
-        middle_Left_A()
-    
-    elif input() == "middle_middle":
-        middle_Middle_A()
-    
-    elif input() == "middle_right":
-        middle_Right_A() 
-    
-    elif input() == "bottom_left":
-        bottom_Left_A() 
+def main():
+    if location == "top left":
+        top_Left(shape) 
 
-    elif input() == "bottom_middle":
-        bottom_Middle_A() 
+    elif location == "top middle":
+        top_Middle(shape)
+
+    elif location == "top right":
+        top_Right(shape)
+    
+    elif location == "middle left":
+        middle_Left(shape)
+    
+    elif location == "middle middle":
+        middle_Middle(shape)
+    
+    elif location == "middle right":
+        middle_Right(shape) 
+    
+    elif location == "bottom left":
+        bottom_Left(shape) 
+
+    elif location == "bottom middle":
+        bottom_Middle(shape) 
   
-    elif input() == "bottom_right":
-        bottom_Right_A() 
+    elif location == "bottom right":
+        bottom_Right(shape) 
     
     else: 
-        not_Valid_A()
+        not_Valid()
+
+
+
+def top_Right_From_Top(shape_bingo):
+    return a[0][0] == shape_bingo and a[0][1] == shape_bingo and a[0][2] == shape_bingo
+    # to the right from top
+
+
+def diagonal_To_Bottom_Right(shape_bingo):
+    return a[0][0] == shape_bingo and a[1][1] == shape_bingo and a[2][2] == shape_bingo    
+    # diagonal to bottom right
+
+
+def bottom_Left_From_Top(shape_bingo):
+    return a[0][0] == shape_bingo and a[1][0] == shape_bingo and a[2][0] == shape_bingo      
+    # to the bottom left from top
+
+
+def bottom_Middle_From_Mid_Top(shape_bingo):
+    return a[0][1] == shape_bingo and a[1][1] == shape_bingo and a[2][1] == shape_bingo       
+    # to the bottom middle from the middle top
+
+
+def bottom_Right_From_Top_Right(shape_bingo):
+    return a[0][2] == shape_bingo and a[1][2] == shape_bingo and a[2][2] == shape_bingo        
+    # bottom right from top right
+
+
+def middle_Left_From_Right(shape_bingo):
+    return a[1][0] == shape_bingo and a[1][1] == shape_bingo and a[1][2] == shape_bingo       
+    # middle left from middle right
+
+
+def bottom_Left_To_Bottom_Right(shape_bingo):
+    return a[2][0] == shape_bingo and a[2][1] == shape_bingo and a[2][2] == shape_bingo       
+    # bottom left to bottom right
+
+
+def bottom_Left_From_Top(shape_bingo):
+    return a[2][0] == shape_bingo and a[1][1] == shape_bingo and a[0][2] == shape_bingo      
+    # bottom left to top right
+
+
+def Bingo_A():
+    bingo = "Found"
+    print("BINGO! Player A wins")
     
     
 
-def main_B():  
-    if input() == "top_left":
-        top_Left_B() 
+def Bingo_B():
+    bingo = "Found"
+    print("BINGO! Player B wins.")
+   
+    
 
-    elif input() == "top_middle":
-        top_Middle_B()
 
-    elif input() == "top_right":
-        top_Right_B()
-    
-    elif input() == "middle_left":
-        middle_Left_B()
-    
-    elif input() == "middle_middle":
-        middle_Middle_B()
-    
-    elif input() == "middle_right":
-        middle_Right_B() 
-    
-    elif input() == "bottom_left":
-        bottom_Left_B() 
+def checker_A():
+    if top_Right_From_Top(shape_bingo):
+        Bingo_A()
 
-    elif input() == "bottom_middle":
-        bottom_Middle_B() 
-  
-    elif input() == "bottom_right":
-        bottom_Right_B() 
+    elif diagonal_To_Bottom_Right(shape_bingo):
+        Bingo_A()
+
+    elif bottom_Left_From_Top(shape_bingo):
+        Bingo_A()
+
+    elif bottom_Middle_From_Mid_Top(shape_bingo):
+        Bingo_A()
+
+    elif bottom_Right_From_Top_Right(shape_bingo):
+        Bingo_A()
+
+    elif middle_Left_From_Right(shape_bingo):
+        Bingo_A()
+
+    elif bottom_Left_To_Bottom_Right(shape_bingo):
+        Bingo_A()
+
+    elif bottom_Left_From_Top(shape_bingo):
+        Bingo_A()
     
-    else: 
-        not_Valid_B()
+
+
+
+def checker_B():
+    if top_Right_From_Top(shape_bingo):
+        Bingo_B()
+
+    elif diagonal_To_Bottom_Right(shape_bingo):
+        Bingo_B()
+
+    elif bottom_Left_From_Top(shape_bingo):
+        Bingo_B()
+
+    elif bottom_Middle_From_Mid_Top(shape_bingo):
+        Bingo_B()
+
+    elif bottom_Right_From_Top_Right(shape_bingo):
+        Bingo_B()
+
+    elif middle_Left_From_Right(shape_bingo):
+        Bingo_B()
+
+    elif bottom_Left_To_Bottom_Right(shape_bingo):
+        Bingo_B()
+
+    elif bottom_Left_From_Top(shape_bingo):
+        Bingo_B()
+
 
 
 
@@ -174,11 +236,44 @@ def main_B():
 
 print("This application is a console version of the BINGO! game.")
 
-"this is a sentence.\n"
+print("this is a sentence.\n")
 
-if input("Type yes to continue.") == "yes":
-    how_to_play()
-else:
-    print("Have a Good day")
-    
-    
+bingo = "not Found"
+
+loc = "not added to"
+
+how_to_play()
+
+while bingo == "not Found":
+    if loc == "not added to":
+        player_A()
+
+        shape = "x"
+
+        shape_bingo = "x"
+
+        ask_For_Input()
+
+        location = input()
+
+        main() #check and add and make loc = "added"
+
+        
+    checker_A() #if there is bingo print bingo and make bingo = "found 
+    loc = "not added to"
+
+    if loc == "not added to":
+        player_B()
+
+        shape = "O"
+
+        shape_bingo = "O"
+
+        ask_For_Input()
+
+        location == input()
+
+        main()
+
+    checker_B()
+    loc = "not added to"
