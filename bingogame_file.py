@@ -258,7 +258,7 @@ while bingo == False:
         if bingo_win == True:
             print("winner is" + " " + player(play))
             bingo = True
-        elif game_round == 10:
+        elif game_round == 9:
             bingo = True
         elif turn == True:
             game_round += 1
