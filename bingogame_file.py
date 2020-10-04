@@ -12,6 +12,8 @@ def how_to_play():
     print("to input your X or your 0 write the specific location on the 3x3 board \n")
     
     print("for example: middle left or top right.\n")
+
+    print("remember! center is middle so middle center is middle middle")
     
 # assigning variable
 
@@ -270,3 +272,4 @@ while bingo == False:
             print(game_round)
     except:
         print("please input another location")
+        
