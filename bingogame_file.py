@@ -9,68 +9,67 @@ def how_to_play():
     
     print("Player 2 = O \n")
     
-    print("to input your X or your 0 write the specific location on the 3x3 array \n")
+    print("to input your X or your 0 write the specific location on the 3x3 board \n")
     
-    print("for example: middle_left or top_right. Don't forget to use the underscores \n")
+    print("for example: middle left or top right.\n")
     
 # assigning variable
 
 def top_Left(shape):
     if a[0][0] == " ":
         a[0][0] = shape
-        next_Turn()
+       
         
     
 def top_Middle(shape):
     if a[0][1] == " ":
         a[0][1] = shape
-        next_Turn()
+       
         
     
 def top_Right(shape):
     if a[0][2] == " ":
         a[0][2] = shape
-        next_Turn()
+        
         
    
 def middle_Left(shape):
     if a[1][0] == " ":
         a[1][0] = shape
-        next_Turn()
+        
         
 
 def middle_Middle(shape):
     if a[1][1] == " ":
         a[1][1] = shape
-        next_Turn()
+        
         
 
 def middle_Right(shape):
     if a[1][2] == " ":
         a[1][2] = shape
-        next_Turn()
+      
         
 
 def bottom_Left(shape):
     if a[2][0] == " ":
         a[2][0] = shape
-        next_Turn()
+        
        
 
 def bottom_Middle(shape):
     if a[2][1] == " ":
         a[2][1] = shape
-        next_Turn()        
+              
 
 def bottom_Right(shape):
     if a[2][2] == " ":
         a[2][2] = shape
-        next_Turn()
+        
        
 
-def not_Valid():
-    print("sorry this location is not valid")
 
+    
 
 #identification 
 
@@ -115,7 +114,8 @@ def main():
         bottom_Right(shape) 
     
     else: 
-        not_Valid()
+        raise Exception("sorry, this is not a valid location")
+
 
 #bingo checking
 
@@ -160,100 +160,36 @@ def bottom_Left_From_Top(shape_bingo):
 
 # printing bingo 
 
-def checker_A():
+def checker():
     if top_Right_From_Top(shape_bingo):
-        Bingo_A()
-        bingo_Found()
+        return True
         
-        
-
     elif diagonal_To_Bottom_Right(shape_bingo):
-        Bingo_A()
-        bingo_Found()
+        return True
         
-        
-
     elif bottom_Left_From_Top(shape_bingo):
-        Bingo_A()
-        bingo_Found()
+        return True
         
-
     elif bottom_Middle_From_Mid_Top(shape_bingo):
-        Bingo_A()
-        bingo_Found()
+        return True
         
 
     elif bottom_Right_From_Top_Right(shape_bingo):
-        Bingo_A()
-        bingo_Found()
+        return True
         
 
     elif middle_Left_From_Right(shape_bingo):
-        Bingo_A()
-        bingo_Found()
-        
-
-    elif bottom_Left_To_Bottom_Right(shape_bingo):
-        Bingo_A()
-        bingo_Found()
-        
-
-    elif bottom_Left_From_Top(shape_bingo):
-        Bingo_A()
-        bingo_Found()
+        return True
         
     
-
-
-
-def checker_B():
-    if top_Right_From_Top(shape_bingo):
-        Bingo_B()
-        bingo_Found()
-        
-
-    elif diagonal_To_Bottom_Right(shape_bingo):
-        Bingo_B()
-        bingo_Found()
-        
-
-    elif bottom_Left_From_Top(shape_bingo):
-        Bingo_B()
-        bingo_Found()
-        
-
-    elif bottom_Middle_From_Mid_Top(shape_bingo):
-        Bingo_B()
-        bingo_Found()
-        
-
-    elif bottom_Right_From_Top_Right(shape_bingo):
-        Bingo_B()
-        bingo_Found()
-        
-
-    elif middle_Left_From_Right(shape_bingo):
-        Bingo_B()
-        bingo_Found()
-        
-
     elif bottom_Left_To_Bottom_Right(shape_bingo):
-        Bingo_B()
-        bingo_Found()
-        
+        return True
+       
 
     elif bottom_Left_From_Top(shape_bingo):
-        Bingo_B()
-        bingo_Found()
+        return True
+       
         
-
-def next_Turn():
-    global loc
-    loc = "added"
-
-def bingo_Found():
-    global bingo
-    bingo = "found"
 
 def shape_A():
     global shape 
@@ -277,41 +213,60 @@ def Bingo_A():
 def Bingo_B():
     print("BINGO! Player B wins!")
 
+def Turn():
+    return True
 
-bingo = "not found"
+def player_turn(turn):
+    if turn == True:
+        shape_A()
+        shape_Bingo_A()
+    elif turn == False:
+        shape_B()
+        shape_Bingo_B()
 
-loc = "not added to"
+def player(play):
+    if play == True:
+        return "a"
+    elif play == False:
+        return "b" 
+
+
+
+
+
+
+bingo = False
+
+play = True
+turn = True
+
+game_round = 1
 
 how_to_play()
 
-while bingo == "not found":
-    if loc == "not added to":
-        player_A()
-
-        shape_A()
-
-        shape_Bingo_A()
-
-        ask_For_Input()
-
-        location = input()
-
+while bingo == False:
+    print("\nplayer " + player(play) + " turn. please input your location")
+    location = input()
+    player_turn(turn)
+    
+    try:
         main()
-    checker_A()
-    loc = "not added to"
-
-    if loc == "not added to":
-        player_B()
-
-        shape_B()
-
-        shape_Bingo_B()
-
-        ask_For_Input()
-
-        location = input()
-
-        main()
-    checker_B()
-    print(a)
-    loc = "not added to"
+        bingo_win = checker()
+        print(a)
+        if bingo_win == True:
+            print("winner is" + " " + player(play))
+            bingo = True
+        elif game_round == 10:
+            bingo = True
+        elif turn == True:
+            game_round += 1
+            turn = False
+            play = False
+            print(game_round)
+        elif turn == False:
+            game_round += 1
+            turn = True
+            play = True
+            print(game_round)
+    except:
+        print("please input another location")
